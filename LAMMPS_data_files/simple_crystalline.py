@@ -1,7 +1,8 @@
 #-------------------------------------------------------# 
-# Generate LAMMPS data file using random atom positions #
+# Generate LAMMPS data file using crystalline metal 	#
+# 	atom positions 									    #
 # 														#
-# 	- Bradley Huddleston, February 27, 2018				#
+# 	- Bradley Huddleston, April 15, 2018				#
 #-------------------------------------------------------#
 
 import numpy as np
