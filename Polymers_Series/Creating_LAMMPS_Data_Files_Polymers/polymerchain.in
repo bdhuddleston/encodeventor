@@ -1,0 +1,30 @@
+
+dimension  3
+atom_style molecular
+boundary   p p p
+units      real
+
+pair_style      lj/cut 11.5
+bond_style      harmonic
+angle_style     harmonic
+dihedral_style  harmonic
+improper_style  none
+
+
+read_data polymerchain.data
+
+pair_coeff  1 1   0.023775 3.8983
+pair_coeff  2 2   0.0038   3.195
+pair_coeff  1 2   0.009505 3.5292
+
+bond_coeff  1 350 1.33 # C-C
+bond_coeff  2 350 0.99 # C-H
+
+angle_coeff 1 50  120  # X-C-X
+
+dihedral_coeff 1 22.5 -1 2
+
+dump 1 all custom 10 minimize.dump id type x y z
+
+minimize 1e-8 1e-6 1000 10000
+write_data minimized.data
